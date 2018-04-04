@@ -1,0 +1,15 @@
+1. SELECT COUNT(id) FROM dinos; //select count takes argument of column to count everything. also to count all the rows -> SELECT COUNT(*) FROM dinos;
+
+2. SELECT * from dinos WHERE period = 'Jurassic'; 
+
+3. SELECT SUM (length)  from dinos WHERE period = 'Cretaceous';
+
+4. SELECT * from dinos WHERE period = 'Jurassic' OR period =  'Cretaceous' ORDER BY species ASC; // ASC = alphabetical ascending order
+
+5. SELECT * FROM dinos WHERE t_order = 'Saurischia' AND diet = 'Herbivorous';
+
+6. SELECT * FROM dinos ORDER BY length ASC LIMIT 1; // to find the top 1 of the shortest (since length is ascending). first would be the shortest
+
+UPDATE dinos SET name = 'shortie' WHERE id = 160; //update dino  where name is set to shortie if id is #160. you get id from the previous command. 	//you can combine the two queries here into  UPDATE dinos SET name = 'shortie' WHERE id = (SELECT id FROM dinos ORDER BY length ASC LIMIT 1); // this type of query is called inner query. 
+
+7. SELECT * from dinos ORDER BY name ASC;
